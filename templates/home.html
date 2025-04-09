@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container text-center mt-5">
+    {% if current_user.is_authenticated %}
+        <h1>Welcome back, {{ current_user.username }}!</h1>
+        <p class="lead">Explore various topics and share your thoughts with the community.</p>
+        
+        <a href="{{ url_for('topics') }}" class="btn btn-info btn-lg">View Topics</a>
+        <a href="{{ url_for('admin_dashboard') }}" class="btn btn-primary btn-lg mt-3">Go to Admin Dashboard</a>
+        <a href="{{ url_for('logout') }}" class="btn btn-danger btn-lg mt-3">Logout</a>
+    {% else %}
+        <h1>Welcome to the Home Page!</h1>
+        <p class="lead">Explore various topics and share your thoughts with the community.</p>
+
+        <a href="{{ url_for('login') }}" class="btn btn-primary btn-lg">Login</a>
+        <a href="{{ url_for('register') }}" class="btn btn-success btn-lg">Register</a>
+    {% endif %}
+</div>
+{% endblock %}
