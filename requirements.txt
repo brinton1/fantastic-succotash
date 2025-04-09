@@ -59,6 +59,8 @@ pytest==8.3.5
 PyYAML==6.0.2
 regex==2024.11.6
 requests==2.32.3
+gunicorn==20.1.0  # Or whatever the latest version is
+
 rich==13.9.4
 safetensors==0.5.3
 scipy==1.15.2
